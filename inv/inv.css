@@ -313,6 +313,25 @@
     display: none;
   }
 
+  #docs #mobile-menu-container{
+    position: absolute;
+    background-color: black;
+    max-width: 12.5rem;
+    max-height: 30rem;
+    top: 8rem;
+    z-index: 9999;
+  }
+
+  #docs #mobile-menu-container .socials{
+    display: none;
+  }
+
+  #docs > div:nth-of-type(3) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
   #docs > div:nth-of-type(2){
     padding-left: 1rem;
     padding-right: 1rem;

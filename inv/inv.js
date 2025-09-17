@@ -3298,10 +3298,16 @@ export function setDocsContent(sectionName) {
   }
 
   if (sectionName === "roadmap") {
-    attachToggleEvents("toggle-arrow-a", "toggle-content-a")
+    attachToggleEvents("toggle-arrow-a", "toggle-content-a");
   }
 
+  // Hide mobile menu automatically on small screens
+  const mobileMenuContainer = document.getElementById('mobile-menu-container');
+  if (window.innerWidth <= 768 && mobileMenuContainer) { // adjust 768px to your breakpoint
+    mobileMenuContainer.style.display = 'none';
+  }
 }
+
 
 
 
@@ -3334,6 +3340,19 @@ function attachToggleEvents(arrowClass = 'toggle-arrow', contentClass = 'toggle-
     arrow._toggleHandler = handler;
   });
 }
+
+  // Get references to the button and the menu
+  const mobileMenuButton = document.getElementById('mobile-menu');
+  const mobileMenuContainer = document.getElementById('mobile-menu-container');
+
+  // Toggle the menu on button click
+  mobileMenuButton.addEventListener('click', () => {
+    if (mobileMenuContainer.style.display === 'none' || mobileMenuContainer.style.display === '') {
+      mobileMenuContainer.style.display = 'block';
+    } else {
+      mobileMenuContainer.style.display = 'none';
+    }
+  });
 
 
 initDropdowns();
