@@ -332,6 +332,23 @@
     padding-top: 0;
   }
 
+
+  #docs .table {
+    max-width: 100%;         /* make sure it doesn’t exceed screen width */
+    overflow-x: auto;        /* enable horizontal scrolling */
+    overflow-y: hidden;
+    display: block;          /* ensure scroll container works */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+  }
+  
+  #docs .table .row {
+    min-width: 35rem;        /* keeps each row wide enough */
+    display: flex;           /* ensures columns align properly */
+    flex-shrink: 0;          /* prevents squishing */
+  }
+  
+
+
   #docs > div:nth-of-type(2){
     padding-left: 1rem;
     padding-right: 1rem;
